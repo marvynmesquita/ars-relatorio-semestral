@@ -23,8 +23,9 @@ header .logo{
     align-items: center;
     text-align: center;
 }
-.header-text h1{
-    font-weight: bold;
+
+.header-text h2{
+    font-weight: normal;
 }
 
 /*configuração do formulário*/
