@@ -2,6 +2,7 @@
 @import url("./global.css");
 @import url("./components.css");
 
+/*configuração do header*/
 header{
     width: 100vw;
     height: 15vh;
@@ -15,10 +16,51 @@ header .logo{
     width: auto;
     max-height: 80%;
 }
-.header-text{
+.header-text{ /*texto do cabeçalho*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.header-text h1{
+    font-weight: bold;
+}
+
+/*configuração do formulário*/
+form{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: large;
+}
+
+/*informações do aluno*/
+form .aluno-info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+form .aluno-info *{
+    margin: 0.5rem;
+}
+
+form .aluno-info input{
+    width: auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--wp--preset--color--cyan-bluish-gray);
+}
+
+form .aluno-info .nome{
+    width: 50%;
+}
+
+form .aluno-info .matricula{
+    width: 30%;
 }
