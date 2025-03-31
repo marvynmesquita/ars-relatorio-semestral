@@ -1,0 +1,24 @@
+@import url("./reset.css");
+@import url("./global.css");
+@import url("./components.css");
+
+header{
+    width: 100vw;
+    height: 15vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    width: auto;
+    max-height: 80%;
+}
+.header-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
