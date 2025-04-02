@@ -10,7 +10,7 @@ async function loadData() {
     const worksheet = workbook.Sheets[sheetName];
     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-    console.log(jsonData);
+    jsonData.forEach((row) => { console.log(row); });
 } // loadData
 
 loadData();
