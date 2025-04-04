@@ -20,11 +20,10 @@ async function loadData() {
             if (periodos.includes(row[0][0]) == false) {
                 periodos.push(row[0][0])
             }
-            if (materias.includes(row[1]) == false) {
-                materias.push(row[1])
+            if (materias.includes(row) == false) {
+                materias.push([row[0][0], row[1]])
             }
         }
-
     });
 
     if (periodos) {
@@ -32,8 +31,23 @@ async function loadData() {
             const option = new Option(periodo, periodo)
             periodoSelect.add(option)
         })
-    console.log(periodoSelect)
 }
 } // loadData
 
 loadData();
+
+const materiasFill = () => {
+    var materiaCell = document.querySelector('.materiaCell')
+    materiaCell.innerHTML = ''
+    var materiaSelect = document.createElement('select')
+    const periodoEscolhido = periodoSelect.value
+    console.log(materias)
+    materias.forEach((materia) => {
+        if (materia[0] === periodoEscolhido) {
+            const matopt = new Option(materia[1],materia[1])
+            materiaSelect.add(matopt)
+            console.log(materia)
+        }
+    })
+    materiaCell.appendChild(materiaSelect)
+}
