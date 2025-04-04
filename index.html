@@ -103,7 +103,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_1" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_1">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_1" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -120,7 +126,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_2" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_2">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_2" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -137,7 +149,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_3" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_3">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_3" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -154,7 +172,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_4" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_4">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_4" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -171,7 +195,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_5" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_5">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_5" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -188,7 +218,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_6" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_6">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_6" placeholder="Professor"></td>
             </tr>
             <tr>
@@ -205,7 +241,13 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td><input type="text" name="situacao_7" placeholder="Situação"></td>
+                <td>
+                    <select name="situacao_7">
+                        <option value="">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="D">D</option>
+                    </select>
+                </td>
                 <td><input type="text" name="professor_7" placeholder="Professor"></td>
             </tr>
         </tbody>
@@ -246,7 +288,13 @@
             
             // Célula Situação
             const cell4 = newRow.insertCell(3);
-            cell4.innerHTML = `<input type="text" name="situacao_${rowCount + 1}" placeholder="Situação">`;
+            cell4.innerHTML = `
+                <select name="situacao_${rowCount + 1}">
+                    <option value="">Selecione</option>
+                    <option value="P">P</option>
+                    <option value="D">D</option>
+                </select>
+            `;
             
             // Célula Professor
             const cell5 = newRow.insertCell(4);
