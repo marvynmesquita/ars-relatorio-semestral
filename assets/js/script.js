@@ -27,6 +27,7 @@ async function loadData() {
     });
 
     if (periodos) {
+        periodoSelect.innerHTML = "<option value='' selected disabled></option>"
         periodos.forEach((periodo) => {
             const option = new Option(periodo, periodo)
             periodoSelect.add(option)
@@ -40,6 +41,7 @@ const materiasFill = () => {
     var materiaCell = document.querySelector('.materiaCell')
     materiaCell.innerHTML = ''
     var materiaSelect = document.createElement('select')
+    materiaSelect.innerHTML = "<option value='' selected disabled></option>"
     const periodoEscolhido = periodoSelect.value
     console.log(materias)
     materias.forEach((materia) => {

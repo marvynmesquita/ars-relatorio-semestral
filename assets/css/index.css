@@ -44,9 +44,10 @@ form .aluno-info{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
+
 form .aluno-info *{
     margin: 0.5rem;
 }
@@ -54,7 +55,7 @@ form .aluno-info *{
 form .aluno-info input{
     width: auto;
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 1px solid var(--wp--preset--color--cyan-bluish-gray);
 }
 
@@ -66,15 +67,19 @@ form .aluno-info .matricula{
     width: 30%;
 }
 
+form .aluno-info .curso{
+    width: 25%;
+}
+
 /* Estilização do formulário */
 table {
-    width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 2rem;
+    width: 100%;
 }
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 0.1rem solid #ddd;
+    padding: 0.8rem;
     text-align: left;
 }
 th {
@@ -86,10 +91,10 @@ tr:nth-child(even) {
 }
 select, input[type="text"] {
     width: 100%;
-    padding: 5px;
+    padding: 0.5rem;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
 }
 select:focus, input[type="text"]:focus {
     outline: none;
@@ -97,22 +102,34 @@ select:focus, input[type="text"]:focus {
 }
 .horarios-title {
     font-size: 1.5em;
-    margin: 20px 0 10px 0;
+    margin: 2rem 0 1rem 0;
     color: #333;
     font-weight: normal;
     text-align: center;
 }
 .add-row-btn {
     display: block;
-    margin: 15px auto;
-    padding: 10px 20px;
+    margin: 1.5rem auto;
+    padding: 1rem 2rem;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 .add-row-btn:hover {
     background-color: #45a049;
+}
+
+.periodoCell{
+    width: 5vw;
+}
+
+.materiaCell, .professorCell {
+    width: 25vw;
+}
+
+.diaCell, .situacaoCell {
+    width: 10vw;
 }

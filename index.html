@@ -17,191 +17,203 @@
     <form action="" method="post">
         <div class="aluno-info">
             <label for="nome">Nome:</label>
-            <input type="text" class="nome" name="nome" id="nome" required>
+            <input type="text" class="nome" name="nome" required>
             <label for="matricula">Matrícula:</label>
             <input type="text" class="matricula" name="matricula" id="matricula" required>
         </div>
+        <div class="aluno-info">
+            <label for="curso">Curso:</label>
+            <input type="text" class="curso" nome="curso" required>
+            <label for="matriz">Matriz:</label>
+            <input type="text" class="matriz" name="matriz" required>
+            <label for="semestre">Semestre:</label>
+            <input name="semestre" class="semestre" required>
+            <label for="periodo">Período:</label>
+            <input type="number" name="periodo" class="periodo" required>
+        </div>
+        <!-- Início do Formulário -->
+        <div class="horarios-title">Horários de Aula</div>
+
+        <table id="horarios-table">
+            <thead>
+                <tr>
+                    <th>Dias de Aula</th>
+                    <th>Período</th>
+                    <th>Disciplina</th>
+                    <th>Sit.</th>
+                    <th>Professor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_1" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <select name="situacao_1">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_1" placeholder="Professor">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_2">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_2">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_2" placeholder="Professor"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_3">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_3">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_3" placeholder="Professor"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_4">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_4">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_4" placeholder="Professor"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_5">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_5">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_5" placeholder="Professor"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_6">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_6">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_6" placeholder="Professor"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="dia_semana_7">
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="situacao_7">
+                            <option value="">Selecione</option>
+                            <option value="P">P</option>
+                            <option value="D">D</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="professor_7" placeholder="Professor"></td>
+                </tr>
+            </tbody>
+        </table>
     </form>
-
-    <!-- Início do Formulário -->
-    <div class="horarios-title">Horários de Aula</div>
-
-    <table id="horarios-table">
-        <thead>
-            <tr>
-                <th>Dias de Aula</th>
-                <th>Período</th>
-                <th>Disciplina</th>
-                <th>Sit.</th>
-                <th>Professor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <select name="dia_semana_1">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
-                </td>
-                <td class="materiaCell"></td>
-                <td>
-                    <select name="situacao_1">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_1" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_2">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_2">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_2" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_3">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_3">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_3" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_4">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_4">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_4" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_5">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_5">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_5" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_6">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_6">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_6" placeholder="Professor"></td>
-            </tr>
-            <tr>
-                <td>
-                    <select name="dia_semana_7">
-                        <option value="">Selecione</option>
-                        <option value="segunda">Segunda-feira</option>
-                        <option value="terca">Terça-feira</option>
-                        <option value="quarta">Quarta-feira</option>
-                        <option value="quinta">Quinta-feira</option>
-                        <option value="sexta">Sexta-feira</option>
-                        <option value="sabado">Sábado</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                    <select name="situacao_7">
-                        <option value="">Selecione</option>
-                        <option value="P">P</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-                <td><input type="text" name="professor_7" placeholder="Professor"></td>
-            </tr>
-        </tbody>
-    </table>
 
     <!-- Botão para adicionar novas linhas -->
     <button class="add-row-btn" onclick="addTableRow()">Adicionar Linha</button>
