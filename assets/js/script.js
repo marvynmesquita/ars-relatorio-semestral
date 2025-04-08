@@ -8,8 +8,8 @@ var materias = []
 var periodoSelect = document.querySelector('.periodoSelect')
 
 async function loadData() {
-    const response = await fetch(db);
-    const data = await response.arrayBuffer();
+    const response = await axios.get(db, { responseType: 'arraybuffer', mode: 'no-cors', headers: { 'Access-Control-Allow-Origin' : '*' } });
+    const data = await new Uint8Array(response.data);
     const workbook = XLSX.read(data, { type: 'array' });
     const sheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[sheetName];
@@ -43,12 +43,10 @@ const materiasFill = () => {
     var materiaSelect = document.createElement('select')
     materiaSelect.innerHTML = "<option value='' selected disabled></option>"
     const periodoEscolhido = periodoSelect.value
-    console.log(materias)
     materias.forEach((materia) => {
         if (materia[0] === periodoEscolhido) {
             const matopt = new Option(materia[1],materia[1])
             materiaSelect.add(matopt)
-            console.log(materia)
         }
     })
     materiaCell.appendChild(materiaSelect)
