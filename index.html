@@ -63,125 +63,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_1" maxlength="1" placeholder="Presencial ou Digital">
+                        <input type="text" name="situacao_1" maxlength="1" placeholder="Situação">
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_1" placeholder="Professor">
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_2">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_2" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_2" placeholder="Professor"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_3">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_3" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_3" placeholder="Professor"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_4">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_4" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_4" placeholder="Professor"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_5">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_5" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_5" placeholder="Professor"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_6">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_6" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_6" placeholder="Professor"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="dia_semana_7">
-                            <option value="">Selecione</option>
-                            <option value="segunda">Segunda-feira</option>
-                            <option value="terca">Terça-feira</option>
-                            <option value="quarta">Quarta-feira</option>
-                            <option value="quinta">Quinta-feira</option>
-                            <option value="sexta">Sexta-feira</option>
-                            <option value="sabado">Sábado</option>
-                        </select>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="situacao_7" maxlength="1" placeholder="Presencial ou Digital">
-                    </td>
-                    <td><input type="text" name="professor_7" placeholder="Professor"></td>
                 </tr>
             </tbody>
         </table>
@@ -222,7 +108,7 @@
             
             // Célula Situação
             const cell4 = newRow.insertCell(3);
-            cell4.innerHTML = `<input type="text" name="situacao_${rowCount + 1}" maxlength="1" placeholder="Presencial ou Digital">`;
+            cell4.innerHTML = `<input type="text" name="situacao_${rowCount + 1}" maxlength="1" placeholder="Situação">`;
             
             // Célula Professor
             const cell5 = newRow.insertCell(4);
