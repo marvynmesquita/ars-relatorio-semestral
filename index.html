@@ -40,7 +40,7 @@
                     <th>Dias de Aula</th>
                     <th>Período</th>
                     <th>Disciplina</th>
-                    <th>Sit.</th>
+                    <th>Situação</th>
                     <th>Professor</th>
                 </tr>
             </thead>
@@ -63,11 +63,7 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <select name="situacao_1">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_1" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_1" placeholder="Professor">
@@ -88,11 +84,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_2">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_2" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_2" placeholder="Professor"></td>
                 </tr>
@@ -111,11 +103,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_3">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_3" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_3" placeholder="Professor"></td>
                 </tr>
@@ -134,11 +122,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_4">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_4" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_4" placeholder="Professor"></td>
                 </tr>
@@ -157,11 +141,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_5">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_5" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_5" placeholder="Professor"></td>
                 </tr>
@@ -180,11 +160,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_6">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_6" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_6" placeholder="Professor"></td>
                 </tr>
@@ -203,11 +179,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <select name="situacao_7">
-                            <option value="">Selecione</option>
-                            <option value="P">P</option>
-                            <option value="D">D</option>
-                        </select>
+                        <input type="text" name="situacao_7" maxlength="1" placeholder="Presencial ou Digital">
                     </td>
                     <td><input type="text" name="professor_7" placeholder="Professor"></td>
                 </tr>
@@ -250,13 +222,7 @@
             
             // Célula Situação
             const cell4 = newRow.insertCell(3);
-            cell4.innerHTML = `
-                <select name="situacao_${rowCount + 1}">
-                    <option value="">Selecione</option>
-                    <option value="P">P</option>
-                    <option value="D">D</option>
-                </select>
-            `;
+            cell4.innerHTML = `<input type="text" name="situacao_${rowCount + 1}" maxlength="1" placeholder="Presencial ou Digital">`;
             
             // Célula Professor
             const cell5 = newRow.insertCell(4);
