@@ -69,12 +69,152 @@
                         <input type="text" name="professor_1" placeholder="Professor">
                     </td>
                 </tr>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_2" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <input type="text" name="situacao_2" maxlength="1" placeholder="Situação">
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_2" placeholder="Professor">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_3" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <input type="text" name="situacao_3" maxlength="1" placeholder="Situação">
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_3" placeholder="Professor">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_4" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <input type="text" name="situacao_4" maxlength="1" placeholder="Situação">
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_4" placeholder="Professor">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_5" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <input type="text" name="situacao_5" maxlength="1" placeholder="Situação">
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_5" placeholder="Professor">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="diaCell">
+                        <select name="dia_semana_6" required>
+                            <option value="">Selecione</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </td>
+                    <td class="periodoCell" required>
+                        <select name="periodo" class="periodoSelect" onchange="materiasFill()"></select>
+                    </td>
+                    <td class="materiaCell" required>
+                    </td>
+                    <td class="situacaoCell" required>
+                        <input type="text" name="situacao_6" maxlength="1" placeholder="Situação">
+                    </td>
+                    <td class="professorCell" required>
+                        <input type="text" name="professor_6" placeholder="Professor">
+                    </td>
+                </tr>
             </tbody>
         </table>
     </form>
 
     <!-- Botão para adicionar novas linhas -->
     <button class="add-row-btn" onclick="addTableRow()">Adicionar Linha</button>
+
+    <!-- Demais informações -->
+    <div class="observacoes-section">
+        <div class="situacao-info">
+            <strong>Situação:</strong> Presencial - P &nbsp;&nbsp; Digital - D
+        </div>
+        
+        <div class="proximo-semestre">
+            <label for="proximo_semestre"><strong>Próximo Semestre:</strong></label>
+            <input type="text" id="proximo_semestre" name="proximo_semestre">
+        </div>
+        
+        <div class="isencoes">
+            <label for="pedir_isencoes"><strong>Pedir isenções das disciplinas:</strong></label>
+            <input type="text" id="pedir_isencoes" name="pedir_isencoes">
+        </div>
+        
+        <div class="observacoes-title"><strong>Observações:</strong></div>
+        <textarea name="observacoes" class="observacoes-textarea"></textarea>
+    </div>
 
     <!--Biblioteca para manipular planilha do EXCEL-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
