@@ -1,21 +1,18 @@
 const reader = new FileReader();
 
-const db = '/assets/db/matrizESW.xlsx';
+const db = 'https://ars-db.onrender.com';
 
 var periodos = []
 var materias = []
 
 var periodoSelect = document.querySelector('.periodoSelect')
 
-async function loadData() {
-    const response = await axios.get(db, { responseType: 'arraybuffer', headers: { 'Access-Control-Allow-Origin' : '*' } });
-    const data = await new Uint8Array(response.data);
-    const workbook = XLSX.read(data, { type: 'array' });
-    const sheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[sheetName];
-    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-    jsonData.forEach((row) => {
+async function loadData() {
+    const response = await axios.get(db);
+    const data = await response.data;
+    
+    data.forEach((row) => {
         if (row[0][0] != 'P') {
             if (periodos.includes(row[0][0]) == false) {
                 periodos.push(row[0][0])
@@ -57,6 +54,7 @@ function addTableRow() {
     const table = document.getElementById('horarios-table').getElementsByTagName('tbody')[0];
     const rowCount = table.rows.length;
     const newRow = table.insertRow(rowCount);
+    newRow.setAttribute('id', `row_${rowCount + 1}`);
     
     // Célula Dias de Aula
     const cell1 = newRow.insertCell(0);
@@ -72,8 +70,18 @@ function addTableRow() {
         </select>
     `;
     
-    // Célula Período (vazia)
-    newRow.insertCell(1);
+    // Célula Período
+    const periodoSelect = document.createElement('select');
+    periodoSelect.innerHTML = "<option value='' selected disabled></option>"
+    periodos.forEach((periodo) => {
+        const option = new Option(periodo, periodo);
+        periodoSelect.add(option);
+    });
+    periodoSelect.classList.add('periodoSelect');
+    periodoSelect.setAttribute('onchange', 'materiasFill()');
+    const cell2 = newRow.insertCell(1);
+    
+    cell2.appendChild(periodoSelect);
     
     // Célula Disciplina (vazia)
     newRow.insertCell(2);
