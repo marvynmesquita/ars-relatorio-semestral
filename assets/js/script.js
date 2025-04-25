@@ -2,19 +2,12 @@ const reader = new FileReader();
 
 const db = 'https://ars-db.onrender.com';
 
+let vezes = 0;
+
 var periodos = []
 var materias = []
 
-var rows = document.getElementById('horarios-table').getElementsByTagName('tbody')[0].rows
-rows = Array.from(rows)
-rows.forEach((row) => {
-    const periodoSelect = row.querySelector('.periodoSelect')
-    loadData(periodoSelect)
-}
-)
-
-
-async function loadData(periodoSelect) {
+async function loadData() {
     const response = await axios.get(db);
     const data = await response.data;
     
@@ -28,7 +21,9 @@ async function loadData(periodoSelect) {
             }
         }
     });
+}
 
+const periodosFill = (periodoSelect) => {
     if (periodos) {
         periodoSelect.innerHTML = "<option value='' selected disabled></option>"
         periodos.forEach((periodo) => {
@@ -37,6 +32,16 @@ async function loadData(periodoSelect) {
         })
 }
 }
+
+loadData().then(() => {
+    var rows = document.getElementById('horarios-table').getElementsByTagName('tbody')[0].rows
+    rows = Array.from(rows)
+    rows.forEach((row) => {
+        const periodoSelect = row.querySelector('.periodoSelect')
+        periodosFill(periodoSelect)
+    }
+    )
+})
 
 const materiasFill = (childEl) => {
     const thisParentEl = childEl.parentElement
@@ -50,7 +55,7 @@ const materiasFill = (childEl) => {
     var materiaSelect = document.createElement('select')
     materiaSelect.innerHTML = "<option value='' selected disabled></option>"
     materias.forEach((materia) => {
-        if (childEl.value == materia[0]) {
+        if (materia[0] == childEl.value) {
             const option = new Option(materia[1], materia[1])
             materiaSelect.add(option)
         }
