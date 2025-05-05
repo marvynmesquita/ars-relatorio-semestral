@@ -111,3 +111,22 @@ function addTableRow() {
     const cell5 = newRow.insertCell(4);
     cell5.innerHTML = `<input type="text" name="professor" placeholder="Professor">`;
 }
+
+// Função para formatar a data atual no formato dd/mm/aaaa
+function formatarDataAtual() {
+    const data = new Date();
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa em 0
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+}
+
+// Função para preencher as datas automaticamente
+function preencherDatas() {
+    const dataFormatada = formatarDataAtual();
+    document.getElementById('data-coordenador').textContent = dataFormatada;
+    document.getElementById('data-aluno').textContent = dataFormatada;
+}
+
+// Executa quando a página carregar
+window.onload = preencherDatas;

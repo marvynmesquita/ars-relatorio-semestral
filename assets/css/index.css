@@ -24,7 +24,7 @@ header .logo{
 }
 
 
-.header-text h1, h2{
+strong, h1, h2{
     font-weight: normal;
 }
 
@@ -40,7 +40,7 @@ form{
 }
 
 /*informações do aluno*/
-form .aluno-info{
+form .aluno-info, .observacoes-section, .assinaturas-section{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -48,6 +48,9 @@ form .aluno-info{
     align-items: center;
 }
 
+.observacoes-section {
+    flex-direction: column !important;
+}
 form .aluno-info *{
     margin: 0.5rem;
 }
