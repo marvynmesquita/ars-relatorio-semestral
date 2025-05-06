@@ -112,14 +112,14 @@ select:focus, input[type="text"]:focus {
 }
 .add-row-btn {
     display: block;
-    margin: 1.5rem auto;
     padding: 1rem 2rem;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 0.4rem;
+    border-radius: 0.8rem;
     cursor: pointer;
     font-size: 1.6rem;
+    transition: background-color 0.3s ease;
 }
 .add-row-btn:hover {
     background-color: #45a049;
@@ -135,4 +135,26 @@ select:focus, input[type="text"]:focus {
 
 .diaCell, .situacaoCell {
     width: 10vw;
+}
+
+.btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.export-pdf-btn {
+    display: block;
+    padding: 1rem 2rem;
+    background-color:  #0969da;
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+.export-pdf-btn:hover {
+    background-color: #0754b3; 
 }

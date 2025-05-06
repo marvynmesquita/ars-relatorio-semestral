@@ -192,8 +192,12 @@
             </tbody>
         </table>
 
-    <!-- Botão para adicionar novas linhas -->
-    <button class="add-row-btn" onclick="addTableRow()">Adicionar Linha</button>
+    <!-- Botões para adicionar novas linhas e exportar para PDF -->
+    <div class="btns-container">
+        <button class="add-row-btn" onclick="addTableRow()">Adicionar Linha</button>
+        <button type="button" id="export-pdf-btn" class="export-pdf-btn" onclick="exportarParaPDF()">Exportar para PDF</button>
+    </div>
+
 
     <!-- Demais informações -->
     <div class="observacoes-section">
@@ -237,6 +241,14 @@
     <!--Biblioteca para manipular planilha do EXCEL-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script> <!--Importando axios para solucionar problema com CORS-->
+    
+    <!--Biblioteca para exportar para PDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    
     <script src="./assets/js/script.js"></script>
+    <script src="/assets/js/export-pdf.js"></script> 
+
+
 </body>
 </html>
