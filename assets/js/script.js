@@ -17,7 +17,7 @@ async function loadData() {
                 periodos.push(row[0][0])
             }
             if (materias.includes(row) == false) {
-                materias.push([row[0][0], row[1]])
+                materias.push([row[0][0], row[1], row[2], row[3]])
             }
         }
     });
@@ -60,8 +60,25 @@ const materiasFill = (childEl) => {
             materiaSelect.add(option)
         }
     })
+    materiaSelect.onchange = (event) => {
+        const selectedOption = event.target.value
+        const selectedMateria = materias.find((materia) => materia[1] === selectedOption)
+        if (selectedMateria) {
+            const professorCell = parentRow.querySelector('.professorCell')
+            const professorInput = professorCell.querySelector('input')
+            if (professorInput) {
+                professorInput.value = selectedMateria[3]
+            }
+            const situacaoCell = parentRow.querySelector('.situacaoCell')
+            const situacaoInput = situacaoCell.querySelector('input')
+            if (situacaoInput) {
+                situacaoInput.value = selectedMateria[2]
+            }
+        }
+    }
     materiaCell.appendChild(materiaSelect)
 }
+
 
 // Função para adicionar novas linhas à tabela
 function addTableRow() {
