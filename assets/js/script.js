@@ -147,3 +147,49 @@ function preencherDatas() {
 
 // Executa quando a página carregar
 window.onload = preencherDatas;
+
+// Autocomplete para o campo de curso
+document.addEventListener('DOMContentLoaded', function() {
+    const cursoInput = document.querySelector('.curso');
+    const cursos = ['Engenharia de Software', 'Engenharia Civil'];
+    
+    cursoInput.addEventListener('input', function(e) {
+        const input = e.target.value.toLowerCase();
+        
+        // Limpa sugestões anteriores
+        const datalist = document.getElementById('curso-suggestions');
+        if (datalist) {
+            datalist.remove();
+        }
+        
+        if (input.length < 3) return; // Mostra sugestões após 3 caracteres
+        
+        const matches = cursos.filter(curso => 
+            curso.toLowerCase().includes(input)
+        );
+        
+        if (matches.length > 0) {
+            const newDatalist = document.createElement('datalist');
+            newDatalist.id = 'curso-suggestions';
+            
+            matches.forEach(match => {
+                const option = document.createElement('option');
+                option.value = match;
+                newDatalist.appendChild(option);
+            });
+            
+            document.body.appendChild(newDatalist);
+            cursoInput.setAttribute('list', 'curso-suggestions');
+        }
+    });
+    
+    // Fechar sugestões quando clicar fora
+    document.addEventListener('click', function(e) {
+        if (e.target !== cursoInput) {
+            const datalist = document.getElementById('curso-suggestions');
+            if (datalist) {
+                datalist.remove();
+            }
+        }
+    });
+});

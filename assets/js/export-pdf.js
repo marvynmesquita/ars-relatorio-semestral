@@ -18,7 +18,7 @@ function exportarParaPDF() {
     let currentY = margin;
 
     // Cabeçalho Superior com Logo
-    const logoURL = '/assets/img/fusve.png';
+    const logoURL = './assets/img/fusve.png';
     try {
         doc.addImage(logoURL, 'PNG', margin, currentY + -6, 50, 15);
     } catch (e) {
