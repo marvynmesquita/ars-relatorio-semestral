@@ -2,23 +2,40 @@ const reader = new FileReader();
 
 const db = 'https://ars-db.onrender.com';
 
-let vezes = 0;
-
 var periodos = []
 var materias = []
+let matriz;
 
-async function loadData() {
-    const response = await axios.get(db);
+const matrizInput = document.getElementsByClassName('matriz')[0];
+matrizInput.addEventListener('change', (event) => {
+    periodos, materias = [];
+    const matriz = event.target.value;
+    if (matriz) {
+        loadData(`${db}/${matriz}`).then(() => {
+            var rows = document.getElementById('horarios-table').getElementsByTagName('tbody')[0].rows
+            rows = Array.from(rows)
+            rows.forEach((row) => {
+                const periodoSelect = row.querySelector('.periodoSelect')
+                periodosFill(periodoSelect)
+            }
+            )
+        })
+    }
+});
+
+async function loadData(matriz) {
+    const response = await axios.get(matriz);
     const data = await response.data;
-    
     data.forEach((row) => {
         if (row[0][0] != 'P') {
-            if (periodos.includes(row[0][0]) == false) {
-                periodos.push(row[0][0])
+            if (periodos.includes(row[0]) == false) {
+                periodos.push(row[0])
             }
+            console.log('Periodos adicionados:', periodos);
             if (materias.includes(row) == false) {
-                materias.push([row[0][0], row[1], row[2], row[3]])
+                materias.push([row[0], row[1], row[2], row[3]])
             }
+            console.log('Materias adicionadas:', materias);
         }
     });
 }
@@ -33,15 +50,7 @@ const periodosFill = (periodoSelect) => {
 }
 }
 
-loadData().then(() => {
-    var rows = document.getElementById('horarios-table').getElementsByTagName('tbody')[0].rows
-    rows = Array.from(rows)
-    rows.forEach((row) => {
-        const periodoSelect = row.querySelector('.periodoSelect')
-        periodosFill(periodoSelect)
-    }
-    )
-})
+
 
 const materiasFill = (childEl) => {
     const thisParentEl = childEl.parentElement
