@@ -25,7 +25,11 @@
             <label for="curso">Curso:</label>
             <input type="text" class="curso" nome="curso" required list="curso-suggestions">
             <label for="matriz">Matriz:</label>
-            <input type="text" class="matriz" name="matriz" required>
+            <select name="matriz" class="matriz">
+                <option value="" selected>Selecione a Matriz</option>
+                <option value="2022">2022</option>
+                <option value="2025">2025</option>
+            </select>
             <label for="semestre">Semestre:</label>
             <input name="semestre" class="semestre" required>
             <label for="periodo">Período:</label>
@@ -63,7 +67,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_1" maxlength="1" placeholder="Situação">
+                        <select name="situacao_1" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_1" placeholder="Professor">
@@ -87,7 +95,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_2" maxlength="1" placeholder="Situação">
+                        <select name="situacao_2" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_2" placeholder="Professor">
@@ -111,7 +123,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_3" maxlength="1" placeholder="Situação">
+                        <select name="situacao_3" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_3" placeholder="Professor">
@@ -135,7 +151,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_4" maxlength="1" placeholder="Situação" class="situacaoInput">
+                        <select name="situacao_4" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_4" placeholder="Professor" class="professorInput">
@@ -159,7 +179,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_5" maxlength="1" placeholder="Situação">
+                        <select name="situacao_5" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_5" placeholder="Professor">
@@ -183,7 +207,11 @@
                     <td class="materiaCell" required>
                     </td>
                     <td class="situacaoCell" required>
-                        <input type="text" name="situacao_6" maxlength="1" placeholder="Situação">
+                        <select name="situacao_6" class="situacaoSelect" required>
+                            <option value="">Selecione</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
                     </td>
                     <td class="professorCell" required>
                         <input type="text" name="professor_6" placeholder="Professor">
@@ -198,10 +226,7 @@
 
     <!-- Demais informações -->
     <div class="observacoes-section">
-        <div class="situacao-info">
-            <strong>Situação:</strong> Presencial - P &nbsp;&nbsp; Digital - D
-        </div>
-        
+
         <div class="proximo-semestre">
             <label for="proximo_semestre"><strong>Próximo Semestre:</strong></label>
             <input type="text" id="proximo_semestre" name="proximo_semestre">

@@ -69,22 +69,6 @@ const materiasFill = (childEl) => {
             materiaSelect.add(option)
         }
     })
-    materiaSelect.onchange = (event) => {
-        const selectedOption = event.target.value
-        const selectedMateria = materias.find((materia) => materia[1] === selectedOption)
-        if (selectedMateria) {
-            const professorCell = parentRow.querySelector('.professorCell')
-            const professorInput = professorCell.querySelector('input')
-            if (professorInput) {
-                professorInput.value = selectedMateria[3]
-            }
-            const situacaoCell = parentRow.querySelector('.situacaoCell')
-            const situacaoInput = situacaoCell.querySelector('input')
-            if (situacaoInput) {
-                situacaoInput.value = selectedMateria[2]
-            }
-        }
-    }
     materiaCell.appendChild(materiaSelect)
 }
 
@@ -131,7 +115,13 @@ function addTableRow() {
 
     // Célula Situação
     const cell4 = newRow.insertCell(3);
-    cell4.innerHTML = `<input type="text" name="situacao" maxlength="1" placeholder="Situação">`;
+    cell4.innerHTML = `
+        <select name="situacao_${rowCount + 1}">
+            <option value="">Selecione</option>
+            <option value="Remoto">Remoto</option>
+            <option value="Presencial">Presencial</option>
+        </select>
+    `;
     
     // Célula Professor
     const cell5 = newRow.insertCell(4);
