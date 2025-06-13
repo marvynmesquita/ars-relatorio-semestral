@@ -121,10 +121,10 @@ function exportarParaPDF() {
             rowData.push(materiaInput ? materiaInput.value : materiaCell.textContent.trim());
         }
 
-        const situacaoInput = row.querySelector("input[name^=\"situacao\"]");
+        const situacaoInput = row.querySelector("select[name^=\"situacao\"]");
         rowData.push(situacaoInput ? situacaoInput.value : "");
 
-        const professorInput = row.querySelector("input[name^=\"professor\"]");
+        const professorInput = row.querySelector("select[name^=\"professor\"]");
         rowData.push(professorInput ? professorInput.value : "");
 
         if (rowData[2] || rowData[3] || rowData[4]) {
@@ -159,10 +159,10 @@ function exportarParaPDF() {
             textColor: [0, 0, 0]
         },
         columnStyles: {
-            0: { cellWidth: 20, halign: "center" },
-            1: { cellWidth: 12, halign: "center" },
-            2: { cellWidth: 80, halign: "left" },
-            3: { cellWidth: 12, halign: "center" },
+            0: { cellWidth: "auto", halign: "center" },
+            1: { cellWidth: "auto", halign: "center" },
+            2: { cellWidth: "auto", halign: "left" },
+            3: { cellWidth: "auto", halign: "center" },
             4: { cellWidth: "auto", halign: "left" }
         },
         didDrawPage: function (data) {

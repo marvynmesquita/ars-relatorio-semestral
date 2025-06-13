@@ -125,7 +125,21 @@ function addTableRow() {
     
     // Célula Professor
     const cell5 = newRow.insertCell(4);
-    cell5.innerHTML = `<input type="text" name="professor" placeholder="Professor">`;
+    cell5.innerHTML = `
+        <select name="professor_${rowCount + 1}">
+            <option value="">Selecione</option>
+            <option value="André Ricardo Saraiva">André Ricardo Saraiva</option>
+            <option value="Altemar Sales de Oliveira">Altemar Sales de Oliveira</option>
+            <option value="Diego Ramos Inácio">Diego Ramos Inácio</option>
+            <option value="Gioliano Barbosa Bertoni">Gioliano Barbosa Bertoni</option>
+            <option value="João Batista Lopes Coelho Júnior">João Batista Lopes Coelho Júnior</option>
+            <option value="Luciano Barbosa da Silva">Luciano Barbosa da Silva</option>
+            <option value="Mukenge Shay">Mukenge Shay</option>
+            <option value="Rodrigo Galdino Ximenes">Rodrigo Galdino Ximenes</option>
+            <option value="Sergio Santos Filho">Sergio Santos Filho</option>
+            <option value="Sergio de Oliveira Santos">Sergio de Oliveira Santos</option>
+        </select>
+    `;
 }
 
 // Função para formatar a data atual no formato dd/mm/aaaa
